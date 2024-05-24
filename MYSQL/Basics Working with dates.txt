@@ -1,0 +1,1 @@
+select memid,surname,firstname,joindate from cd.members where joindate>'2012-08-31 11:59:59'
