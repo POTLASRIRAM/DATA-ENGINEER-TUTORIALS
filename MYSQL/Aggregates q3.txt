@@ -1,0 +1,1 @@
+select distinct recommendedby,count(*) from cd.members where recommendedby is NOT null group by recommendedby order by recommendedby
