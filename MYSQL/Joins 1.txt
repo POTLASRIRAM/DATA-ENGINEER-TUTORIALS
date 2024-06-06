@@ -1,0 +1,7 @@
+select c.id,c.name,i.character_id,i.quantity
+
+from fantacy.characters c
+join fantacy.inventory i
+on c.id = i.character_id
+where i.quantity=1
+order by c.name
