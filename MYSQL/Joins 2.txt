@@ -1,0 +1,22 @@
+Multiple joins :
+
+select c.id,c.name,i.item_id,i.quantity,it.name as item_name, it.power
+
+from `fantacy.characters` as c
+join `fantacy.inventory` as i
+on i.character_id =c.id
+join `fantacy.items` as it
+on it.id = i.character_id
+
+order by c.id,i.item_id
+
+
+Self join :
+
+select 
+
+chars.name,mentors.name
+
+from `fantacy.characters` as chars
+join `fantacy.characters` as mentors
+on chars.mentor_id = mentors.id
