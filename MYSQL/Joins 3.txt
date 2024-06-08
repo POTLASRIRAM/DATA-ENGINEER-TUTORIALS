@@ -1,0 +1,5 @@
+select c.name,c.experience/100,i.name,i.power
+from fantacy.characters c
+join fantacy.items i
+on c.experience/100>= i.power
+order by c.name
