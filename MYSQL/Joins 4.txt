@@ -1,0 +1,31 @@
+Inner join :
+
+select c.name as name, i.name as mentor_name
+from fantacy.characters c
+inner join fantacy.characters i
+on c.mentor_id = i.id
+
+
+left join :
+
+select c.name as name, i.name as mentor_name
+from fantacy.characters c
+left join fantacy.characters i
+on c.mentor_id = i.id
+
+
+Right join :
+
+select c.name as name, i.name as mentor_name
+from fantacy.characters c
+right join fantacy.characters i
+on c.mentor_id = i.id
+
+
+Full outer join :
+
+select c.name as name, i.name as mentor_name
+from fantacy.characters c
+full outer join fantacy.characters i
+on c.mentor_id = i.id
+
