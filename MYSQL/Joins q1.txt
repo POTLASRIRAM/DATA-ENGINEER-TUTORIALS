@@ -1,0 +1,6 @@
+select bookings.starttime
+
+from cd.members
+join cd.bookings 
+on members.memid = bookings.memid
+where members.firstname='David' and members.surname='Farrell'
