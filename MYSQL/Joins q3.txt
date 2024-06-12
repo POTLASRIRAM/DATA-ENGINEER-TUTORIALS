@@ -1,0 +1,6 @@
+select distinct t1.firstname,t1.surname
+from cd.members as t1
+join cd.members as t2
+on t1.memid = t2.recommendedby
+
+order by t1.surname,t1.firstname
