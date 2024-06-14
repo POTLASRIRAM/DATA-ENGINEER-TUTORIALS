@@ -1,0 +1,7 @@
+select distinct m.firstname|| ' ' ||m.surname as member, f.name as facility
+from cd.bookings b 
+inner join cd.facilities f on b.facid = f.facid
+inner join cd.members m
+on b.memid = m.memid
+where b.facid = 0 or b.facid =1
+order by member,facility
