@@ -1,0 +1,75 @@
+Group by item_type and calculate the average power for each group.
+
+select item_type,avg(power) from `fantacy.items` GROUP BY item_type
+
+Group by rarity and count the number of items in each group.
+
+select rarity,count(item_type)
+from `fantacy.items`
+GROUP BY rarity
+
+Group by item_type and calculate the total weight for each group.
+select item_type,sum(weight)
+
+from `fantacy.items`
+GROUP BY item_type
+
+Group by rarity and find the maximum power for each group.
+
+select rarity,max(power)
+
+from `fantacy.items`
+GROUP BY rarity
+
+Group by item_type and list the distinct rarity values for each group.
+
+select  item_type, rarity
+
+from `fantacy.items`
+GROUP BY item_type,rarity
+
+
+--Group by rarity and calculate the average weight for each group.
+
+select rarity, avg(weight)
+
+from `fantacy.items`
+GROUP BY rarity
+
+--Group by item_type and find the earliest date_added for each group.
+
+select item_type, min(date_added)
+from `fantacy.items`
+Group By item_type
+
+--Group by rarity and count the number of items for each item_type within each rarity group.
+select rarity,item_type,count(item_type)
+from fantacy.items
+group by rarity,item_type
+order by rarity,item_type
+
+--Group by item_type and calculate the average weight for each rarity within each item_type group.
+
+select item_type,rarity,avg(weight)
+from fantacy.items
+group by item_type,rarity
+order by item_type,rarity
+
+--Group by rarity and list the names of items in each group.
+select rarity,string_agg(name,",")
+
+from `fantacy.items`
+group by rarity
+order by rarity
+
+
+
+
+
+
+
+
+
+
+
+
