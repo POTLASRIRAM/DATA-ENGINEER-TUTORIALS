@@ -1,0 +1,4 @@
+select rarity,avg(power) over() as avg_power, sum(power) over(partition by item_type) as sum_power
+
+from `fantacy.items`
+order by rarity

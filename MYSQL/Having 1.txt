@@ -1,0 +1,6 @@
+select class,Avg(experience) as avg_exp
+
+from `fantacy.characters`
+
+group by class
+having avg(experience)>2
