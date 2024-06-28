@@ -1,0 +1,12 @@
+Partition by :
+
+Example :
+select id,name,item_type,power,rarity, sum(power) over(partition by item_type) from `fantacy.items`
+
+The above stmt first uses partition by 'item_type' to group the same values of that column into one group and then it sum's that groups power and displays that sum across that groups power sum data.
+
+
+Order by :
+
+select id,name,item_type,power,rarity, sum(power) over(order by power desc) from `fantacy.items`
+
