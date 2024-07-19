@@ -1,0 +1,2 @@
+# Write your MySQL query statement below
+select users.name, sum(transactions.amount) over(partition by name) as balance from users left join transactions on users.account = transactions.account;
