@@ -1,2 +1,11 @@
-# Write your MySQL query statement below
-select users.name, sum(transactions.amount) over(partition by name) as balance from users left join transactions on users.account = transactions.account;
+with balance as(
+
+select distinct users.name,
+case
+
+  when sum(transactions.amount) over(partition by name) >10000 then sum(transactions.amount) over(partition by name)
+  end as balance
+
+ from users left join transactions on users.account = transactions.account
+)
+select name,balance from balance where balance>10000;
