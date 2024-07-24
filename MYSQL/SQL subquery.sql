@@ -39,5 +39,18 @@ customer_id,
 count(*) as total_no_orders,
 sum(order_amount) as total_amount from orders  group by customer_id; 
 
+-- What is the customer name and the average order amount for customers who have placed orders?
+ select (select customer_name from customers where customers.customer_id = orders.customer_id) as customer_name,avg(order_amount) from orders group by customer_id;
+ 
+ -- What is the customer name and the total number of orders for customers who have placed more than one order?
+ 
+ select (select customer_name from customers where customers.customer_id = orders.customer_id) as customer_name,
+customer_id,
+count(*) as total_no_orders,
+sum(order_amount) as total_amount from orders  group by customer_id having count(*)>1; 
+ 
+ 
+ 
+ 
 
 
