@@ -1,0 +1,8 @@
+select *,
+case
+when x+y <= z OR y+z <= x OR x+z <= y then 'No'
+when x+y >z OR y+z >x OR x+z >y then 'Yes'
+END AS 'Triangle'
+
+
+from triangle;
