@@ -1,0 +1,7 @@
+with company_not_red as(
+    select com_id from company where name = 'red'
+),
+orders_not_red as (
+    select sales_id from orders where com_id IN(SELECT COM_ID FROM company_not_red)
+)
+select name from salesperson sp where sp.sales_id NOT IN (SELECT SALES_ID FROM orders_not_red);

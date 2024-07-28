@@ -6,3 +6,27 @@ END AS 'Triangle'
 
 
 from triangle;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

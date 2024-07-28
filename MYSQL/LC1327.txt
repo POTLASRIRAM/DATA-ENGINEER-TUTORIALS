@@ -1,0 +1,5 @@
+with february_month as(
+select extract(month from order_date) as order_month,product_id,unit from orders where extract(month from order_date) = 2 AND EXTRACT(YEAR FROM order_date) = 2020),
+products_greater_than_hundred as (
+select order_month,product_id,sum(unit) as unit from february_month group by product_id having sum(unit)>=100)
+select p.product_name,ph.unit from products p inner join products_greater_than_hundred ph on p.product_id = ph.product_id;
