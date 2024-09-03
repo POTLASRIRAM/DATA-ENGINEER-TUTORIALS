@@ -1,0 +1,15 @@
+# Write your MySQL query statement below
+with p_id_cte as(
+    select p_id from tree where p_id IS NOT NULL
+)
+
+select id,
+case
+
+ when p_id IS NULL THEN 'Root'
+ when id NOT IN (select * from p_id_cte) then 'Leaf'
+ ELSE 'Inner'
+
+END as type
+from tree;
+
