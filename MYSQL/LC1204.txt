@@ -1,0 +1,9 @@
+with total_weights as(
+select person_name,sum(weight) over(order by turn asc) as total_weight from queue order by turn asc
+),
+
+highest_weight as(
+    select * from total_weights where total_weight<=1000 order by total_weight desc
+)
+
+select person_name from highest_weight LIMIT 1;
