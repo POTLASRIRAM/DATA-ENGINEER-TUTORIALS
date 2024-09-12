@@ -1,0 +1,3 @@
+with updated_class as (
+select student,class,count(class) over(partition by class) as class_count from courses order by class ) 
+select distinct class from updated_class where class_count>=5
