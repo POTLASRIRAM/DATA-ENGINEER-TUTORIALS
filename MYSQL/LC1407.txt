@@ -1,0 +1,4 @@
+with updated_table as(
+select u.id,u.name, COALESCE(SUM(distance) OVER (PARTITION BY u.id ORDER BY distance), 0) as travelled_distance from users u left join rides r on u.id = r.user_id order by travelled_distance desc,u.name asc)
+
+select name,max(travelled_distance) as travelled_distance from updated_table group by id,name
